@@ -1,0 +1,103 @@
+﻿.header {
+    position: relative;
+    text-align: center;
+    color: white;
+    background-color: #F5F5F5;
+    width: auto;
+}
+
+.bg-image {
+    top: 0;
+    left: 0;
+    z-index: -2;
+    position: absolute;
+    background-image: url("Images/index-header.svg");
+    height: 50%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-middle {
+    height: 525px;
+    color: black;
+    margin-top: 320px;
+}
+
+.header-headline {
+    font-size: 65px;
+    font-weight: bolder;
+}
+
+.header-text {
+    font-size: 20px;
+}
+
+.first-offer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.first-offer-left {
+    position: relative;
+}
+
+.first-offer-left-headline {
+    position: absolute;
+    top: 150px;
+    left: 35px;
+    font-size: 45px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.first-offer-left-text {
+    position: absolute;
+    top: 300px;
+    left: 35px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.first-offer-left-button {
+    position: absolute;
+    top: 400px;
+    left: 35px;
+}
+
+.first-offer-right {
+    position: relative;
+}
+
+.first-offer-right-headline {
+    position: absolute;
+    top: 250px;
+    left: 35px;
+    font-size: 45px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.first-offer-right-button {
+    position: absolute;
+    top: 400px;
+    left: 35px;
+}
+
+.product-link {
+    text-decoration: none;
+}
+.rectangle-card-white {
+    width: 245px;
+    height: 116px;
+    background-color: white;
+}
+
+.rectangle-card-gray {
+    width: 245px;
+    height: 116px;
+    background-color: #BBBBBB;
+    margin-right: 30px;
+}

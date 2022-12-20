@@ -1,0 +1,54 @@
+﻿@page "/"
+@inject IndexViewModel viewModel
+
+<NavigationMenu BgColor="#F5F5F5" />
+
+<header class="header">
+    <div class="d-flex justify-content-between background-gray mb-5">
+        <div class="header-left"><img src="Images/img-2.svg" /></div>
+
+        <div class="header-middle">
+            <h2 class="header-headline">SALE UP<br>To 50% Off</h2>
+            <p class="header-text">Online shopping free home delivery over $100</p>
+            <a href="productdetails/50093da3-35dc-4c40-420d-08dae0594f3c"><img class="text-center button-red" src="Images/btn-red.svg" /></a>
+        </div>
+
+        <div class="header-right"><img src="Images/img-1.svg" /></div>
+    </div>
+</header>
+
+<section class="first-offer">
+    <div class="first-offer-left">
+        <img src="Images/img-5.svg" />
+        <h3 class="first-offer-left-headline">Winter Clearance<br>Up to 70% Off!</h3>
+        <p class="first-offer-left-text">Sed ut perspiciatis unde omnis iste natus error sit<br> voluptatem accusantium doloremque laudantium,<br>totam rem apriam eaque ipsa quae ab illo inventore.</p>
+        <a href="productdetails/50093da3-35dc-4c40-420d-08dae0594f3c"><img class="first-offer-left-button" src="Images/btn-black.svg" /></a>
+    </div>
+    <div class="first-offer-right">
+        <img src="Images/img-6.svg" />
+        <h3 class="first-offer-right-headline">New<br>Arrivals</h3>
+        <a href="productdetails/50093da3-35dc-4c40-420d-08dae0594f3c"><img class="first-offer-right-button" src="Images/btn-black.svg" /></a>
+    </div>
+</section>
+
+<section>
+    <h3 class="text-center mb-3">Featured Product</h3>
+    <div class="container justify-content-center d-flex flex-wrap">
+        @foreach (var productCardViewModel in viewModel.Products)
+        {
+            <a class="product-link" href="/productdetails/@productCardViewModel.Id">
+                <ProductCardComponent ViewModel="productCardViewModel" />
+            </a>
+        }
+    </div>
+</section>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        await viewModel.LoadProductsAsync();
+    }
+}
+

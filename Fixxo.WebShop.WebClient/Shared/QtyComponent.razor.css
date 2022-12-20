@@ -1,0 +1,21 @@
+﻿.counter {
+    display: inline-flex;
+}
+
+.number {
+    width: 60px;
+    height: 40px;
+    font-size: 20px;
+    background-color: white;
+    border: 1px solid black;
+    padding-top: 5px;
+    padding-left: 25px;
+}
+
+button {
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    background-color: white;
+    border: 1px solid black;
+}

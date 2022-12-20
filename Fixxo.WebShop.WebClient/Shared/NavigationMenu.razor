@@ -1,0 +1,20 @@
+﻿<div class="navigation-menu" style="background-color: @BgColor">
+    <a class="navigation-logo" href="/">Fixxo.</a>
+    <div class="navigation-links">
+        <a class="navigation-link" href="/">Home</a>
+        <a class="navigation-link" href="#">Categories</a>
+        <a class="navigation-link" href="productdetails/50093da3-35dc-4c40-420d-08dae0594f3c">Products</a>
+        <a class="navigation-link" href="#">Contact</a>
+    </div>
+    <div class="navigation-icons">
+        <a href="#"><img src="Images/magnify.svg" /></a>
+        <a href="#"><img src="Images/sq.svg" /></a>
+        <a href="#"><img src="Images/heart.svg" /></a>
+        <a href="#"><img src="Images/cart.svg" /></a>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string BgColor { get; set; }
+}

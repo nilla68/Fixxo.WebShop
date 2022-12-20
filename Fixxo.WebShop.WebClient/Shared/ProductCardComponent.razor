@@ -1,0 +1,16 @@
+﻿@using System.Globalization;
+
+<div class="card card-deck" style="width: 18rem;">
+    <img class="card-img-top" src="/images/@ViewModel.Image" alt="Card image cap">
+    <div class="card-body text-center">
+        <p class="category product-line-height">@ViewModel.Category.Name</p>
+        <h5 class="product-name product-line-height">@ViewModel.Name</h5>
+        <RatingComponent Rating="@ViewModel.Rating"/>
+        <p class="price product-line-height">@ViewModel.Price.ToString("C", new CultureInfo("sv-SE"))</p>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public ProductCardViewModel ViewModel { get; set; }
+}

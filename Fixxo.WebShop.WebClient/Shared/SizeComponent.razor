@@ -1,0 +1,33 @@
+﻿<div class="size">
+    @if (Size == "S")
+    {
+        <img src="Images/s-red.svg">
+    }
+    else
+    {
+        <img src="Images/s-white.svg">
+    }
+
+    @if (Size == "M")
+    {
+        <img src="Images/m-red.svg">
+    }
+    else
+    {
+        <img src="Images/m-white.svg">
+    }
+
+    @if (Size == "L")
+    {
+        <img src="Images/l-red.svg">
+    }
+    else
+    {
+        <img src="Images/l-white.svg">
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string Size { get; set; }
+}

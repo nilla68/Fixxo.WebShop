@@ -1,0 +1,118 @@
+﻿@page "/productdetails/{Id}"
+@using System.Globalization;
+@inject ProductDetailsViewModel viewModel;
+@inject NavigationManager uriHelper;
+
+<NavigationMenu BgColor="white" />
+
+<div class="special-offer mb-4">
+    <h4 class="text-center mb-3">Get 25% OFF at the Fixxo Selection - Shop Now!</h4>
+</div>
+
+<div class="navigation-from container mb-4">
+    <div class="oi oi-home"></div> <a href="/">Home</a>
+    <div class="oi oi-chevron-right"></div><a href="categories">Product Signal</a>
+</div>
+
+@if (viewModel.Product is not null)
+{
+    <div class="container">
+        <div class="top d-flex">
+            <div class="left-images">
+                <div class="top-img">
+                    <img class="image-main" src="/Images/@viewModel.Product.Image" />
+                </div>
+                <div class="bottom-img d-flex">
+                    <img class="card-img-small" src="/images/@viewModel.Product.Image" alt="A product picture">
+                    <img class="card-img-small" src="/images/@viewModel.Product.Image" alt="A product picture">
+                    <img class="card-img-small" src="/images/@viewModel.Product.Image" alt="A product picture">
+                </div>
+
+                <div class="product-detail-links">
+                    <a href="#" id="selected-detail">Description</a>
+                    <a href="#">Additional</a>
+                    <a href="#">Shopping & Returns</a>
+                    <a href="#">Reviews</a>
+                </div>
+                <hr class="product-detail-hr">
+            </div>
+            <div class="right-text">
+                <h2 class="product-name">@viewModel.Product.Name</h2>
+                <div class="sku-brand-content">
+                    <p>SKU: @viewModel.Product.Sku</p>
+                    <p>BRAND: @viewModel.Product.Brand </p>
+                </div>
+
+                <RatingComponent Rating="@viewModel.Product.Rating" />
+                <p class="price">@viewModel.Product.Price.ToString("C", new CultureInfo("sv-SE"))</p>
+                <p class="description">@viewModel.Product.Description</p>
+                <p class="color">Color: @viewModel.Product.Color</p>
+                <div class="size-content">
+                    <p class="size">Size: </p>
+                    <SizeComponent Size="@viewModel.Product.Size" />
+                </div>
+                <div class="quantity-content">
+                    <p class="qty">Qty: </p>
+                    <QtyComponent />
+                    <button class="cart-btn">Add To Cart</button>
+                </div>
+                <div class="share-content">
+                    <p class="share">Share:</p>
+                    <a class="social-media-link" href="https://facebook.com"><img src="Images/facebook-circle.svg" /></a>
+                    <a class="social-media-link" href="https://instagram.com"><img src="Images/instagram-circle.svg" /></a>
+                    <a class="social-media-link" href="https://twitter.com"><img src="Images/twitter-circle.svg" /></a>
+                    <a class="social-media-link" href="https://linkedin.com"><img src="Images/google-circle.svg" /></a>
+                    <a class="social-media-link" href="https://google.com"><img src="Images/linkedin-circle.svg" /></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="bottom">
+            <div class="product-details-text">
+                <p>Way extensive and dejection get delivered deficient sincerity gentleman age. Too end instrument possession contrasted motionless.<br> Calling offence six joy feeling. Coming merits and was talent enough far. Sir joy northward sportsmen education. Discovery incommode<br>earnestly no he commanded if. Put still any about manor heard. </p>
+                <ul>
+                    <li>Village did removed enjoyed explain nor ham saw calling talking.</li>
+                    <li>Securing as informed declared or margaret.</li>
+                    <li>Joy horrible moreover man feelings own shy.</li>
+                </ul>
+                <p>On even feet time have an no at. Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil respect. Always<br>get adieus nature day course for common. My little garret repair to desire he esteem. </p>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="container">
+    <h3 class="text-left mb-3">Related Products</h3>
+
+    <div class="related-products d-flex flex-wrap">
+        @if (viewModel.RelatedProducts is not null)
+        {
+            @foreach (var productCardViewModel in viewModel.RelatedProducts)
+            {
+                <a class="product-link" @onclick="(e=>GoToBag(productCardViewModel.Id))">
+                    <ProductCardComponent ViewModel="productCardViewModel" />
+                </a>
+            }
+        }
+    </div>
+</div>
+
+@code {
+    private string id;
+    [Parameter]
+    public string Id { get; set; }
+
+    public async Task GoToBag(Guid id)
+    {
+        await viewModel.LoadProductAsync(id);
+        uriHelper.NavigateTo($"/productdetails/{id}");
+        StateHasChanged();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        await viewModel.LoadProductAsync(Guid.Parse(Id));
+    }
+}

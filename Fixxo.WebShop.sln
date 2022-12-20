@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fixxo.WebShop.ProductService", "Fixxo.WebShop.ProductService\Fixxo.WebShop.ProductService.csproj", "{0F25C521-2CF1-40A4-9020-82D0EA5F205A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fixxo.WebShop.WebClient", "Fixxo.WebShop.WebClient\Fixxo.WebShop.WebClient.csproj", "{A5805DA8-8CE6-4A20-BF7C-8DE4519AA030}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fixxo.WebShop.Dtos", "Fixxo.WebShop.Dtos\Fixxo.WebShop.Dtos.csproj", "{8B009507-5690-4199-BFE8-84E745A597E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DB44F075-D97A-4D86-87A6-E7D4C8CD5973}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fixxo.WebShop.DomainModel", "Fixxo.WebShop.DomainModel\Fixxo.WebShop.DomainModel.csproj", "{CFDB3079-A6B6-407D-A3B8-7E418969AB09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F25C521-2CF1-40A4-9020-82D0EA5F205A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F25C521-2CF1-40A4-9020-82D0EA5F205A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F25C521-2CF1-40A4-9020-82D0EA5F205A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F25C521-2CF1-40A4-9020-82D0EA5F205A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5805DA8-8CE6-4A20-BF7C-8DE4519AA030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5805DA8-8CE6-4A20-BF7C-8DE4519AA030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5805DA8-8CE6-4A20-BF7C-8DE4519AA030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5805DA8-8CE6-4A20-BF7C-8DE4519AA030}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B009507-5690-4199-BFE8-84E745A597E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B009507-5690-4199-BFE8-84E745A597E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B009507-5690-4199-BFE8-84E745A597E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B009507-5690-4199-BFE8-84E745A597E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFDB3079-A6B6-407D-A3B8-7E418969AB09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFDB3079-A6B6-407D-A3B8-7E418969AB09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFDB3079-A6B6-407D-A3B8-7E418969AB09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFDB3079-A6B6-407D-A3B8-7E418969AB09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C76530B6-069D-496D-84F1-B4E7CA08EB70}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,21 @@
+﻿<div class="counter">
+    <button @onclick="Decrement">-</button>
+    <div class="number">@Quantity</div>
+    <button @onclick="Increment">+</button>
+</div>
+
+@code {
+    public int Quantity { get; set; } = 1;
+    
+    private void Increment()
+    {
+        Quantity++;
+    }
+    private void Decrement()
+    {
+        Quantity--;
+
+        if(Quantity<1)
+          Quantity=1;
+    }
+}
